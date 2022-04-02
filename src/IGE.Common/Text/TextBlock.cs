@@ -2,16 +2,35 @@
 
 using System.Collections.Generic;
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
 public sealed class TextBlock
 {
-  private string value = string.Empty;
+  public string Text { get; set; } = string.Empty;
+  public TextAlignment Alignment { get; set; }
 
-  public string Value { get => this.value; set => this.value = value; }
-  
+  public Vector2 Size { get; set; }
+  public Color Color { get; set; } = Color.White;
+
+  public void Draw(
+    GameTime gametime,
+    SpriteBatch spriteBatch,
+    SpriteFont spriteFont,
+    Vector2 position)
+  {
+    spriteBatch.DrawString(spriteFont, this.Text, position, this.Color);
+  }
+
+  public Vector2 Measure(SpriteFont spriteFont)
+  {
+    return spriteFont.MeasureString(this.Text);
+  }
+
   #region Equality
   private IEnumerable<object> GetEqualityValues()
   {
-    yield return this.value;
+    yield return this.Text;
   }
 
   private int? hashCode = null;

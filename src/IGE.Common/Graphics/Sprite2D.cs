@@ -53,7 +53,7 @@ public abstract class Sprite2D : DrawableGameEntity
   public override void LoadContent()
   {
     this.texture = this.Game.Content.Load<Texture2D>(this.assetName);
-    this.origin = new Vector2(this.texture.Width / 2, this.texture.Height / 2);
+    this.origin = new Vector2((this.texture.Width * this.scale.X) / 2, (this.texture.Height * this.scale.Y) / 2);
     base.LoadContent();
   }
 

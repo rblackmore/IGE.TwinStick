@@ -4,25 +4,25 @@ public struct TextAlignment
 {
   public TextAlignment()
   {
-    
+    this.HorizontalAlignment = HorizontalTextAlignment.Left;
+    this.VerticalAlignment = VerticalTextAlignment.Top;
   }
   
   public HorizontalTextAlignment HorizontalAlignment { get; set; } 
-    = HorizontalTextAlignment.LeftJustified;
+
   public VerticalTextAlignment VerticalAlignment { get; set; } 
-    = VerticalTextAlignment.TopJustified;
 }
 
 public enum HorizontalTextAlignment
 {
-  LeftJustified = 0,
-  CenterJustified = 1,
-  RightJustified = 2
+  Left = 0,
+  Centered = 1,
+  Right = 2
 }
 
 public enum VerticalTextAlignment
 {
-  TopJustified = 0,
-  CenterJustified = 1,
-  BottonJustified = 2
+  Top = 0,
+  Centered = 1,
+  Bottom = 2
 }
