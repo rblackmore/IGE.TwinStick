@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32317.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9E0C852-D9C1-4F95-B501-75984ECA1906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGE.TwinStick.Desktop", "src\IGE.TwinStick.Desktop\IGE.TwinStick.Desktop.csproj", "{295C352B-D491-49CF-835F-45BA7EA762CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGE.Common", "src\IGE.Common\IGE.Common.csproj", "{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{295C352B-D491-49CF-835F-45BA7EA762CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295C352B-D491-49CF-835F-45BA7EA762CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295C352B-D491-49CF-835F-45BA7EA762CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295C352B-D491-49CF-835F-45BA7EA762CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{295C352B-D491-49CF-835F-45BA7EA762CE} = {E9E0C852-D9C1-4F95-B501-75984ECA1906}
+		{E7C36AD1-B9BA-4029-91CF-BF6E3609DDD4} = {E9E0C852-D9C1-4F95-B501-75984ECA1906}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47C9DDC7-7DAC-4771-9DBC-F92AEFC33810}
+	EndGlobalSection
+EndGlobal
