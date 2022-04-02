@@ -6,6 +6,15 @@ using Microsoft.Xna.Framework;
 
 public abstract class GameEntity : IGameEntity
 {
+  private readonly Game game;
+
+  protected GameEntity(Game game!!)
+  {
+    this.game = game;
+  }
+
+  protected Game Game => game;
+
   public bool Enabled { get; protected set; } = true;
 
   public virtual void Initialize() { }

@@ -18,17 +18,15 @@ public abstract class Sprite2D : DrawableGameEntity
   protected SpriteEffects spriteEffects = SpriteEffects.None;
   protected Velocity2 velocity = Velocity2.Zero;
 
-  protected readonly Game game;
-  protected readonly GraphicsDeviceManager graphics;
+
   private readonly string assetName;
 
   public Sprite2D(
-    Game game!!,
-    GraphicsDeviceManager graphics!!,
+    Game game,
+    GraphicsDeviceManager graphics,
     string assetName!!)
+    : base(game, graphics)
   {
-    this.game = game;
-    this.graphics = graphics;
     this.assetName = assetName;
   }
 
@@ -54,7 +52,7 @@ public abstract class Sprite2D : DrawableGameEntity
 
   public override void LoadContent()
   {
-    this.texture = this.game.Content.Load<Texture2D>(this.assetName);
+    this.texture = this.Game.Content.Load<Texture2D>(this.assetName);
     this.origin = new Vector2(this.texture.Width / 2, this.texture.Height / 2);
     base.LoadContent();
   }
@@ -68,7 +66,7 @@ public abstract class Sprite2D : DrawableGameEntity
   {
     var translation = this.velocity.GetTranslation(gameTime);
     this.position += translation;
-    
+
     base.Update(gameTime);
   }
 
