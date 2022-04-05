@@ -1,5 +1,6 @@
 ﻿namespace IGE.TwinStick.Desktop;
 
+using IGE.Common.Diagnostics;
 using IGE.Common.Graphics;
 
 using Microsoft.Xna.Framework;
@@ -18,6 +19,15 @@ public class Tank : Sprite2D
   public override void Initialize()
   {
     base.Initialize();
+  }
+
+  public override void LoadContent()
+  {
+    base.LoadContent();
+    DiagnosticDisplay.Add(new DiagnosticDetail(() =>
+    {
+      return $"Tank: {this.Position}";
+    }));
   }
 
   public override void Update(GameTime gameTime)

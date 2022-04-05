@@ -12,19 +12,19 @@ public sealed class TextBlock
 
   public Vector2 Size { get; set; }
   public Color Color { get; set; } = Color.White;
+  public SpriteFont Font { get; set; }
 
   public void Draw(
     GameTime gametime,
     SpriteBatch spriteBatch,
-    SpriteFont spriteFont,
     Vector2 position)
   {
-    spriteBatch.DrawString(spriteFont, this.Text, position, this.Color);
+    spriteBatch.DrawString(this.Font, this.Text, position, this.Color);
   }
 
-  public Vector2 Measure(SpriteFont spriteFont)
+  public Vector2 Measure()
   {
-    return spriteFont.MeasureString(this.Text);
+    return this.Font.MeasureString(this.Text);
   }
 
   #region Equality

@@ -1,17 +1,16 @@
 ﻿namespace IGE.Common;
 
-using System.Timers;
-
 using Microsoft.Xna.Framework;
 
-public class Timer : GameEntity
+public class Timer
 {
   private TimeSpan span;
 
   private TimeSpan currentElapsed;
 
-  public Timer(Game game, TimeSpan interval)
-    : base(game)
+  private bool IsEnabled = true;
+
+  public Timer(TimeSpan interval)
   {
     this.span = interval;
   }
@@ -20,19 +19,16 @@ public class Timer : GameEntity
   public int TriggerCount { get; set; }
   
 
-  public override void Initialize()
+  public void Initialize()
   {
-    base.Initialize();
-    this.Enabled = false;
+    this.IsEnabled = false;
     this.currentElapsed = this.span;
   }
-
-  public override void Update(GameTime gameTime)
+  
+  public void Update(GameTime gameTime)
   {
-    if (!this.Enabled)
+    if (!this.IsEnabled)
       return;
-
-    base.Update(gameTime);
 
     this.currentElapsed += gameTime.ElapsedGameTime;
   }
@@ -54,7 +50,7 @@ public class Timer : GameEntity
   
   public void Start()
   {
-    this.Enabled = true;
+    this.IsEnabled = true;
   }
 
   public void Reset()
@@ -64,6 +60,6 @@ public class Timer : GameEntity
 
   public void Stop()
   {
-    this.Enabled = false;
+    this.IsEnabled = false;
   }
 }

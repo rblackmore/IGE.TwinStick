@@ -25,10 +25,10 @@
 /processorParam:TextureFormat=Color
 /build:BlueTankTransparent.png
 
-#begin DroidSansMono12.spritefont
+#begin CaskaydiaCoveNF12.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:DroidSansMono12.spritefont
+/build:CaskaydiaCoveNF12.spritefont
 

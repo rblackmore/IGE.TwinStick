@@ -2,7 +2,7 @@
 
 using Microsoft.Xna.Framework;
 
-public class FrameRateCounter : GameEntity
+public class FrameRateCounter
 {
   public const int MAX_SAMPLES = 100;
 
@@ -10,10 +10,9 @@ public class FrameRateCounter : GameEntity
 
   private Timer timer = null!;
 
-  public FrameRateCounter(Game game)
-    : base(game)
+  public FrameRateCounter()
   {
-    timer = new Timer(game, TimeSpan.FromSeconds(1))
+    timer = new Timer(TimeSpan.FromSeconds(1))
     {
       Repeat = true,
     };
@@ -21,24 +20,17 @@ public class FrameRateCounter : GameEntity
     timer.Start();
   }
 
-  public static long TotalFrames { get; set; }
-  public static float TotalSeconds { get; set; }
-  public static float AverageFramesPerSecond { get; set; }
-  public static float CurrentFramesPerSecond { get; set; }
+  public long TotalFrames { get; set; }
+  public float TotalSeconds { get; set; }
+  public float AverageFramesPerSecond { get; set; }
+  public float CurrentFramesPerSecond { get; set; }
 
-  public override void Initialize()
+  public void Initialize()
   {
-    base.Initialize();
-
-
   }
 
-  public override void Update(GameTime gameTime)
+  public void Update(GameTime gameTime)
   {
-    if (!Enabled)
-      return;
-
-    base.Update(gameTime);
     timer.Update(gameTime);
 
     var sample = 1.0f / (float)gameTime.ElapsedGameTime.TotalSeconds;
