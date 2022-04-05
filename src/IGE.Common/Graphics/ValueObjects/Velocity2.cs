@@ -65,6 +65,11 @@ public sealed class Velocity2 : IComparable, IComparable<Velocity2>
     return new Velocity2(Vector2.Zero, 0.0f);
   }
 
+  public override string ToString()
+  {
+    return $"Direction: {this.Direction}, Speed: {this.Speed}";
+  }
+
   #region Equality
   private IEnumerable<object> GetEqualityValues()
   {

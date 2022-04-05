@@ -8,10 +8,11 @@ using Microsoft.Xna.Framework.Input;
 
 public class Tank : Sprite2D
 {
+  private bool displayDiag = false;
   private float rotationSpeedDegrees = 45.0f;
   private float acceleration = 5.0f;
-  
-  public Tank(Game game, GraphicsDeviceManager graphics) 
+
+  public Tank(Game game, GraphicsDeviceManager graphics)
     : base(game, graphics, "BlueTankTransparent")
   {
   }
@@ -24,9 +25,19 @@ public class Tank : Sprite2D
   public override void LoadContent()
   {
     base.LoadContent();
+    if (displayDiag)
+      AddDiags();
+  }
+
+  private void AddDiags()
+  {
     DiagnosticDisplay.Add(new DiagnosticDetail(() =>
     {
-      return $"Tank: {this.Position}";
+      return $"Tank Position: {this.Position}";
+    }));
+    DiagnosticDisplay.Add(new DiagnosticDetail(() =>
+    {
+      return $"Tank Velocity: {this.Velocity}";
     }));
   }
 
