@@ -1,6 +1,7 @@
 ﻿namespace IGE.Common;
 
 using IGE.Common.Interfaces;
+using IGE.Common.Services;
 
 using Microsoft.Xna.Framework;
 
@@ -8,9 +9,9 @@ public abstract class GameEntity : IGameEntity
 {
   private readonly Game game;
 
-  protected GameEntity(Game game!!)
+  protected GameEntity()
   {
-    this.game = game;
+    this.game = ServiceLocator.GetService<Game>();
   }
 
   protected Game Game => game;

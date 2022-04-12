@@ -21,11 +21,7 @@ public abstract class Sprite2D : DrawableGameEntity
 
   private readonly string assetName;
 
-  public Sprite2D(
-    Game game,
-    GraphicsDeviceManager graphics,
-    string assetName!!)
-    : base(game, graphics)
+  public Sprite2D(string assetName!!)
   {
     this.assetName = assetName;
   }

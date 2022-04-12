@@ -12,8 +12,8 @@ public class Tank : Sprite2D
   private float rotationSpeedDegrees = 45.0f;
   private float acceleration = 5.0f;
 
-  public Tank(Game game, GraphicsDeviceManager graphics)
-    : base(game, graphics, "BlueTankTransparent")
+  public Tank()
+    : base("BlueTankTransparent")
   {
   }
 

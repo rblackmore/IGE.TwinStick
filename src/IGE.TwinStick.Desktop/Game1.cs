@@ -2,23 +2,31 @@
 
 using IGE.Common.Diagnostics;
 using IGE.Common.Graphics.ValueObjects;
+using IGE.Common.Services;
 
+using Lamar;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+
 
 public class Game1 : Game
 {
   private Tank tank;
-  
   private GraphicsDeviceManager graphics;
   private SpriteBatch spriteBatch = null!;
 
   public Game1()
-    : base()
   {
     this.graphics = new GraphicsDeviceManager(this);
+    
+    ServiceLocator.AddService(this.graphics);
 
     this.Content.RootDirectory = "Content";
+
     this.IsFixedTimeStep = true;
     this.IsMouseVisible = true;
   }
@@ -27,8 +35,9 @@ public class Game1 : Game
   {
     this.graphics.PreferredBackBufferWidth = 1600;
     this.graphics.PreferredBackBufferHeight = 800;
+
     this.graphics.ApplyChanges();
-    this.tank = new Tank(this, this.graphics)
+    this.tank = new Tank()
     {
       Position = new Vector2(500, 500),
       Velocity = new Velocity2(new Vector2(10, 0), 0.0f),
@@ -56,6 +65,11 @@ public class Game1 : Game
 
   protected override void Update(GameTime gameTime)
   {
+    if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+    {
+      this.Exit();
+    }
+
     DiagnosticDisplay.Update(gameTime);
     this.tank.Update(gameTime);
     base.Update(gameTime);
